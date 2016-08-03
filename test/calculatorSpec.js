@@ -31,9 +31,14 @@ describe('calculator model', function() {
     expect(this.calculator.subtract(4, 2)).toBe(2);
   });
 
-  it('should multiply numbers', function() {
+  it('should multiply numbers which include zero', function() {
     expect(this.calculator.multiply(0, 3)).toBe(0);
     expect(this.calculator.multiply(3, 0)).toBe(0);
+  });
+
+  it('should multiply none-zero numbers', function() {
+    expect(this.calculator.multiply(1, 3)).toBe(3);
+    expect(this.calculator.multiply(3, 3)).toBe(9);
   });
 });
 
