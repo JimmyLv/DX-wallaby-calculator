@@ -22,3 +22,5 @@ var calculatorTemplate = "<div class=\"top\">\n" +
   "    <span id=\"eval\" class=\"eval\">=</span>\n" +
   "    <span id=\"multiply\" class=\"operator\">x</span>\n" +
   "</div>";
+
+export default calculatorTemplate

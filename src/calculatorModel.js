@@ -25,3 +25,5 @@ Calculator.prototype.divide = function(a, b) {
   if (b === 0) throw new Error('Attempt to divide by zero');
   return a / b;
 };
+
+export default Calculator

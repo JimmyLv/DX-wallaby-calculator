@@ -1,4 +1,4 @@
-var initCalculator = function() {
+const initCalculator = function() {
   // Get all the keys from document
   var keys = document.querySelectorAll('#calculator span');
   var operators = ['+', '-', 'x', '÷'];
@@ -86,3 +86,5 @@ var initCalculator = function() {
     }
   }
 };
+
+export default initCalculator

@@ -1,14 +1,42 @@
-module.exports = () => {
+// import wallabyWebpack from 'wallaby-webpack'
+var wallabyWebpack = require('wallaby-webpack');
+
+module.exports = (wallaby) => {
+
+  var webpackPostprocessor = wallabyWebpack({
+    // webpack options
+
+    externals: {
+      // Use external version of React instead of rebuilding it
+      // "react": "React"
+    },
+    resolve: {
+      extensions: ['', '.js', '.jsx']
+    }
+  });
+
   return {
     files: [
-      'style/calculator.css',
-      {pattern: 'lib/jquery.js', instrument: false},
-      'src/*.js',
-      'test/helper/template.js'
+      { pattern: 'lib/jquery.js', instrument: false },
+      'assets/**',
+      { pattern: 'src/**', load: false },
+      { pattern: 'test/helper/template.js', load: false }
     ],
+
     tests: [
-      'test/*Spec.js'
+      { pattern: 'test/**/*Spec.js', load: false }
     ],
-    debug: true
+
+    compilers: {
+      '**/*.js*': wallaby.compilers.babel()
+    },
+
+    postprocessor: webpackPostprocessor,
+
+    bootstrap: function () {
+      window.__moduleBundler.loadTests();
+    },
+
+    // debug: true
   };
 };

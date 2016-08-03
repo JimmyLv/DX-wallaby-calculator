@@ -1,3 +1,5 @@
+import Calculator from '../src/calculatorModel'
+
 describe('calculator model', function() {
 
   beforeEach(function() {

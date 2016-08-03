@@ -1,3 +1,6 @@
+import initCalculator from '../src/calculatorView'
+import calculatorTemplate from './helper/template'
+
 describe('calculator view', function() {
 
   beforeEach(function() {
