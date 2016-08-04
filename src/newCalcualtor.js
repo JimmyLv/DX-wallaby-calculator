@@ -2,11 +2,19 @@ export default class NewCalculator {
   constructor() {
   }
 
-  static add(a, b) {
+  add(a, b) {
     return a + b
   }
 
-  static multiply(a, b) {
+  multiply(a, b) {
     return a * b
+  }
+
+  divide(a, b) {
+    return a / b
+  }
+
+  subtract(a, b) {
+    return a - b
   }
 }

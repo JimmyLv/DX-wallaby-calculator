@@ -37,6 +37,10 @@ module.exports = (wallaby) => {
       window.__moduleBundler.loadTests();
     },
 
+    delays: {
+      run: 500
+    },
+
     // debug: true
   };
 };
