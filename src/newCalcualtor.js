@@ -1,5 +1,6 @@
 export default class NewCalculator {
   constructor() {
+    console.info('just initial new calculator...')
   }
 
   add(a, b) {

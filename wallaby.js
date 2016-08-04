@@ -38,8 +38,12 @@ module.exports = (wallaby) => {
     },
 
     delays: {
-      run: 500
+      run: 700 // 0.7s
     },
+
+    lowCoverageThreshold: 80, // 80%
+
+    testFramework: 'jasmine', // default
 
     // debug: true
   };
