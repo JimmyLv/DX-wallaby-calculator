@@ -1,5 +1,5 @@
 // import wallabyWebpack from 'wallaby-webpack'
-var wallabyWebpack = require('wallaby-webpack');
+var wallabyWebpack = require('wallaby-webpack')
 
 module.exports = (wallaby) => {
 
@@ -13,7 +13,7 @@ module.exports = (wallaby) => {
     resolve: {
       extensions: ['', '.js', '.jsx']
     }
-  });
+  })
 
   return {
     files: [
@@ -33,10 +33,6 @@ module.exports = (wallaby) => {
 
     postprocessor: webpackPostprocessor,
 
-    bootstrap: function () {
-      window.__moduleBundler.loadTests();
-    },
-
     delays: {
       run: 700 // 0.7s
     },
@@ -45,6 +41,10 @@ module.exports = (wallaby) => {
 
     testFramework: 'jasmine', // default
 
-    // debug: true
-  };
-};
+    // debug: true,
+    
+    setup: function () { // alias: bootstrap
+      window.__moduleBundler.loadTests()
+    }
+  }
+}
